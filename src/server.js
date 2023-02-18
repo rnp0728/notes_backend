@@ -5,11 +5,14 @@ mongoose.set('strictQuery', false);
 const app = express();
 const Note = require('./models/Note');
 const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended : false }));
 app.use(bodyParser.json());
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
+
+// Mongo DB connection
+
 const mongoDbPath = 'mongodb+srv://rnp0728:rnp0728@cluster00.sgahmst.mongodb.net/notesdb';
 mongoose.connect(mongoDbPath, {
   useNewUrlParser: true,
