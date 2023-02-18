@@ -24,10 +24,10 @@ mongoose.connect(mongoDbPath, {
       res.json(response);
     });
 
-    // app.get('/notes/list', async (req, res) => {
-    //   const notes = await Note.find();
-    //   res.json(notes);
-    // });
+    app.get('/notes/list', async (req, res) => {
+      const notes = await Note.find();
+      res.json(notes);
+    });
     const noteRouter = require('./routes/Notes');
     app.use("/notes", noteRouter);
 
