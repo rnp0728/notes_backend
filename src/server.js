@@ -20,7 +20,7 @@ mongoose.connect(mongoDbPath, {
 })
   .then(function () {
     app.get('/', (req, res) => {
-      const response = { message: "API works Fine..." };
+      const response = { statuscode: res.statusCode, message: "API works Fine..." };
       res.json(response);
     });
 
